@@ -1,5 +1,6 @@
 import HomePage from "@/pages/HomePage.vue";
 import ThreadShow from "@/pages/ThreadShow.vue";
+import ThreadCreate from "@/pages/ThreadCreate.vue";
 import NotFound from "@/pages/NotFound.vue";
 import sourceData from "@/data.json";
 import ForumPage from "@/pages/ForumPage.vue";
@@ -7,6 +8,7 @@ import ForumPage from "@/pages/ForumPage.vue";
 import {createRouter, createWebHistory} from "vue-router";
 import CategoryPage from "@/pages/CategoryPage.vue";
 import TheProfile from "@/pages/TheProfile.vue";
+import ThreadEdit from "@/pages/ThreadEdit.vue";
 
 const routes = [
 	{
@@ -58,6 +60,18 @@ const routes = [
 					hash: to.hash,
 				});
 		},
+	},
+	{
+		path: "/forum/:forumId/thread/create",
+		name: "ThreadCreate",
+		component: ThreadCreate,
+		props: true,
+	},
+	{
+		path: "/thread/:id/edit",
+		name: "ThreadEdit",
+		component: ThreadEdit,
+		props: true,
 	},
 	{
 		path: "/:pathMatch(.*)*",
